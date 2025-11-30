@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://d22ls3khmw8tb"]
+
+[ext_resource type="Texture2D" uid="uid://dc6djdc0yolbp" path="res://Sprites/Sprite-03.png" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://0xkuwvks4evk" path="res://Scripts/character_body_2d.gd" id="1_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://cvow3wtpgxbls" path="res://Sprites/Sprite-02.png" id="2_wowpa"]
+[ext_resource type="Texture2D" uid="uid://wfoflci40yw4" path="res://Sprites/Sprite-04.png" id="4_i6g32"]
+[ext_resource type="Texture2D" uid="uid://cmto6blld17bo" path="res://Sprites/Sprite-05.png" id="5_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxrlw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v158k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wowpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ebmjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i6g32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1l0tm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
+size = Vector2(1020, 49)
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(286, -1)
+script = ExtResource("1_qxrlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_qxrlw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_v158k")
+frame_progress = 0.05906278
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(512, 298)
+shape = SubResource("RectangleShape2D_wrm1d")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(504.00003, 150)
+scale = Vector2(0.5247616, 0.46110195)
+texture = ExtResource("6_i6g32")
