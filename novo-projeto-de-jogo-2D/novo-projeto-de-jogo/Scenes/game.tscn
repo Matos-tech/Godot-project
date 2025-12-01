@@ -38,6 +38,6 @@ polygon = PackedVector2Array(-6, 304, 66, 313, 144, 304, 209, 307, 292, 316, 344
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(458.57257, 166.7218)
+position = Vector2(460.5726, 166.7218)
 scale = Vector2(0.47639966, 0.42114812)
 texture = ExtResource("6_i6g32")
