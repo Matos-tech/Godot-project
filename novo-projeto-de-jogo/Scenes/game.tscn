@@ -1,9 +1,22 @@
+<<<<<<< HEAD
+[gd_scene load_steps=6 format=3 uid="uid://d22ls3khmw8tb"]
+=======
 [gd_scene load_steps=4 format=3 uid="uid://d22ls3khmw8tb"]
+>>>>>>> f5d4e6c77944145e7556296fb2806d84030986a6
 
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
 
+<<<<<<< HEAD
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
+size = Vector2(918, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dryh"]
+size = Vector2(11, 328)
+
+=======
+>>>>>>> f5d4e6c77944145e7556296fb2806d84030986a6
 [node name="Game" type="Node2D"]
 
 [node name="Inicio" type="Label" parent="."]
@@ -16,18 +29,31 @@ offset_bottom = 23.0
 z_index = 1
 position = Vector2(10, 285)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Chao" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Chao"]
 texture_filter = 1
 position = Vector2(455.86722, 348.5)
 scale = Vector2(0.12963915, 0.079454266)
 texture = ExtResource("7_1l0tm")
 
+<<<<<<< HEAD
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(459, 326)
+shape = SubResource("RectangleShape2D_wrm1d")
+=======
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-6, 304, 66, 313, 144, 304, 209, 307, 292, 316, 344, 300, 428, 309, 564, 309, 648, 300, 759, 306, 849, 302, 917, 305, 918, 397, -6, 397)
+>>>>>>> f5d4e6c77944145e7556296fb2806d84030986a6
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-5.5, 164)
+shape = SubResource("RectangleShape2D_3dryh")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(458.57257, 166.7218)
 scale = Vector2(0.47639966, 0.42114812)
