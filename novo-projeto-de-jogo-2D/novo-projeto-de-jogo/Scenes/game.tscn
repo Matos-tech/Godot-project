@@ -15,12 +15,6 @@ size = Vector2(30, 315)
 position = Vector2(-14, 147.5)
 shape = SubResource("RectangleShape2D_wrm1d")
 
-[node name="Inicio" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Inicio"]
-
 [node name="player" parent="." instance=ExtResource("1_wrm1d")]
 z_index = 1
 position = Vector2(10, 285)
@@ -38,6 +32,6 @@ polygon = PackedVector2Array(-6, 304, 66, 313, 144, 304, 209, 307, 292, 316, 344
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(460.5726, 166.7218)
-scale = Vector2(0.47639966, 0.42114812)
+position = Vector2(456.5, 166.7218)
+scale = Vector2(0.48072916, 0.42114812)
 texture = ExtResource("6_i6g32")
