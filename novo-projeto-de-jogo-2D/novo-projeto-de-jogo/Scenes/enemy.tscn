@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk3t1o176qtku"]
+
+[ext_resource type="Script" uid="uid://6kaucufqm742" path="res://Scripts/enemy.gd" id="1_ghaa6"]
+[ext_resource type="Texture2D" uid="uid://wwtm84bhpe7l" path="res://Sprites/inimigos/slime-idle-0.png" id="2_1dp5w"]
+[ext_resource type="Texture2D" uid="uid://cv6qsbtkwt3sq" path="res://Sprites/inimigos/slime-idle-1.png" id="3_auwsv"]
+[ext_resource type="Texture2D" uid="uid://37mj0x22vmn1" path="res://Sprites/inimigos/slime-idle-2.png" id="4_8uf12"]
+[ext_resource type="Texture2D" uid="uid://cc6pi7dy4ixjt" path="res://Sprites/inimigos/slime-idle-3.png" id="5_po0sg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta2yt"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56vhr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1dp5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_auwsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8uf12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_po0sg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 6
+script = ExtResource("1_ghaa6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_ta2yt")
+
+[node name="AnimaIni" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 3)
+scale = Vector2(0.74, 0.74)
+sprite_frames = SubResource("SpriteFrames_56vhr")
+animation = &"idle"
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(-3, 4)
+target_position = Vector2(-9, 0)
+collision_mask = 6

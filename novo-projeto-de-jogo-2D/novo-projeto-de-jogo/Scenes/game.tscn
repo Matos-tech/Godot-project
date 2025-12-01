@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=10 format=3 uid="uid://d22ls3khmw8tb"]
 
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://c1k2voqp7n5sf" path="res://Sprites/Bk/sky.png" id="4_3dryh"]
@@ -6,11 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://b8x7s8ffwkatn" path="res://Sprites/Bk/mountains 2.png" id="6_v158k"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://dk3t1o176qtku" path="res://Scenes/enemy.tscn" id="7_v158k"]
+
+[sub_resource type="TileSet" id="TileSet_ldgsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
 size = Vector2(30, 315)
 
 [node name="Game" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ldgsr")
+format = 2
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
@@ -22,18 +29,48 @@ shape = SubResource("RectangleShape2D_wrm1d")
 z_index = 1
 position = Vector2(10, 285)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="chãoprime" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(250, -2)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(455.86722, 348.5)
-scale = Vector2(0.12963915, 0.079454266)
-texture = ExtResource("7_1l0tm")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chãoprime"]
 position = Vector2(-0.6130066, 3.0517578e-05)
 scale = Vector2(0.99783546, 0.9999999)
 polygon = PackedVector2Array(-7.4030175, 307, 68.76184, 310, 124.88332, 307, 188.01999, 307, 284.22824, 314, 341.3519, 304, 378.43216, 304, 428.54062, 309, 481.65558, 310, 573.8551, 304, 649.0178, 302, 760.2586, 307, 850.45386, 304, 918.6014, 305, 918, 397, -6, 397)
+
+[node name="Sprite2D" type="Sprite2D" parent="chãoprime"]
+texture_filter = 1
+position = Vector2(455.86725, 348.5)
+scale = Vector2(0.12963915, 0.079454266)
+texture = ExtResource("7_1l0tm")
+
+[node name="Chao3" type="StaticBody2D" parent="."]
+position = Vector2(234, 1)
+scale = Vector2(0.17, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chao3"]
+position = Vector2(-0.6130066, 3.0517578e-05)
+scale = Vector2(0.99783546, 0.9999999)
+polygon = PackedVector2Array(-7.4030175, 307, 68.76184, 310, 124.88332, 307, 188.01999, 307, 284.22824, 314, 341.3519, 304, 378.43216, 304, 428.54062, 309, 481.65558, 310, 573.8551, 304, 649.0178, 302, 760.2586, 307, 850.45386, 304, 918.6014, 305, 918, 397, -6, 397)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chao3"]
+texture_filter = 1
+position = Vector2(455.86725, 348.5)
+scale = Vector2(0.12963915, 0.079454266)
+texture = ExtResource("7_1l0tm")
+
+[node name="Chao2" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Chao2"]
+texture_filter = 1
+position = Vector2(99.50003, 348.5)
+scale = Vector2(0.029395211, 0.079454266)
+texture = ExtResource("7_1l0tm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chao2"]
+position = Vector2(-2.9638367, 3.0517578e-05)
+scale = Vector2(0.2666024, 0.9999999)
+polygon = PackedVector2Array(-7.4030175, 307, 63.62972, 309, 116.14237, 305, 176.15683, 310, 228.6695, 314, 269.92944, 308, 307.43848, 301, 348.69843, 307, 404.96198, 311, 461.22552, 308, 524.9909, 301, 611.26166, 306, 678.77795, 305, 720.0379, 302, 776.30145, 306, 772.55054, 397.00003, -6, 397)
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
@@ -43,6 +80,7 @@ scale = Vector2(0.48072916, 0.42114812)
 texture = ExtResource("6_i6g32")
 
 [node name="BG" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="05" type="ParallaxLayer" parent="BG"]
 texture_filter = 1
@@ -75,3 +113,9 @@ texture_filter = 1
 position = Vector2(272.05826, 313.99997)
 scale = Vector2(0.08374956, 0.08489796)
 texture = ExtResource("6_v158k")
+
+[node name="enimy" parent="." instance=ExtResource("7_v158k")]
+position = Vector2(125, 291)
+
+[node name="enimy2" parent="." instance=ExtResource("7_v158k")]
+position = Vector2(359, 287)
