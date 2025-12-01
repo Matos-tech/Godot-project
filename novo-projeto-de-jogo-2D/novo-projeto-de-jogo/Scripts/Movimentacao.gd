@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_FORCE= -400.0
-
+var Quanti_Dano =0
+@export var player_life: = 3
+var knockback_vector:= Vector2.ZERO
 @onready var animation:= $AnimatedSprite2D as AnimatedSprite2D
+@onready var remote_transform:= $Remote as RemoteTransform2D
 var is_jumping := false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,5 +35,29 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation.play("idle")
 		
-
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
 	move_and_slide()
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		player_life -=1
+	print("tomou dano")
+	if (player_life ==0 ):
+		print("morreu")
+		queue_free()
+	#else:
+		#take_damage(Vector2(200,-200))
+func follow_camera(camera):
+	var camera_path=camera.get_path()
+	remote_transform.remote_path = camera_path
+	
+#func take_damage(knockback_force :=Vector2.ZERO, duration :=0.25):
+	#player_life -=1
+	
+	#if knockback_force != Vector2.ZERO:
+		#knockback_vector = knockback_force
+		
+		#var knockback_tween := get_tree().create_tween()
+		#knockback_tween.tween_property(self,"knockback_vactor", Vector2.ZERO, duration)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=13 format=3 uid="uid://d22ls3khmw8tb"]
 
+[ext_resource type="Script" uid="uid://bjkqo6ybeuoo2" path="res://Scripts/world-01.gd" id="1_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://cxvpsk6qlp1sx" path="res://Sprites/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_v158k"]
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://c1k2voqp7n5sf" path="res://Sprites/Bk/sky.png" id="4_3dryh"]
@@ -86,6 +87,7 @@ sources/1 = SubResource("TileSetAtlasSource_h4fw4")
 size = Vector2(30, 315)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_h4fw4")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ldgsr")
@@ -95,6 +97,10 @@ layer_0/name = "ground"
 layer_0/tile_data = PackedInt32Array(1507348, 262145, 3, 1048601, 196609, 1, 1048602, 262145, 1, 1048603, 327681, 1, 983071, 196609, 1, 983072, 262145, 1, 983073, 327681, 1, 1048613, 983041, 3, 1048617, 983041, 3)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2(-14, 147.5)
@@ -154,7 +160,6 @@ scale = Vector2(0.48072916, 0.42114812)
 texture = ExtResource("6_i6g32")
 
 [node name="BG" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="05" type="ParallaxLayer" parent="BG"]
 texture_filter = 1
@@ -193,3 +198,12 @@ position = Vector2(125, 291)
 
 [node name="enimy2" parent="." instance=ExtResource("7_v158k")]
 position = Vector2(1193, 300)
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+limit_left = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_horizontal_offset = 0.14
+editor_draw_screen = false
