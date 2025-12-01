@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=6 format=3 uid="uid://d22ls3khmw8tb"]
 
+[ext_resource type="Script" uid="uid://ccf503i4fwr42" path="res://scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
 
+[sub_resource type="GDScript" id="GDScript_wowpa"]
+script/source = "extends Label
+
+func _process() -> void:
+	if movimentacao.game:
+		
+"
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
 
 [node name="Inicio" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+script = SubResource("GDScript_wowpa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Inicio"]
 
