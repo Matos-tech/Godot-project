@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=5 format=3 uid="uid://d22ls3khmw8tb"]
 
-[ext_resource type="PackedScene" uid="uid://c3p4q361kwx1k" path="res://Scenes/inicio.tscn" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
@@ -9,8 +8,6 @@
 size = Vector2(30, 315)
 
 [node name="Game" type="Node2D"]
-
-[node name="Inicio" parent="." instance=ExtResource("1_3dryh")]
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
