@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://u6q0j8rujfsn"]
+
+[ext_resource type="Texture2D" uid="uid://durt5unec13xn" path="res://Sprites/Dialog_Box(16 x 16).png" id="1_sqs0f"]
+[ext_resource type="FontFile" uid="uid://cgrjyeriwkdlc" path="res://Sprites/RevMiniPixel.ttf" id="2_ccvmi"]
+
+[node name="dialog_box" type="MarginContainer"]
+texture_filter = 1
+offset_right = 55.0
+offset_bottom = 46.0
+
+[node name="background" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_sqs0f")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="text_label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ccvmi")
+theme_override_font_sizes/font_size = 8
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]

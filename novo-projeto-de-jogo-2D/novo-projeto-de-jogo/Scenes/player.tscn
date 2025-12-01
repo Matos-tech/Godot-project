@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://0uy77r75f33t"]
 
 [ext_resource type="Script" uid="uid://0xkuwvks4evk" path="res://Scripts/Movimentacao.gd" id="1_fkybt"]
-[ext_resource type="Texture2D" uid="uid://cvow3wtpgxbls" path="res://Sprites/Sprite-02.png" id="2_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://dc6djdc0yolbp" path="res://Sprites/Sprite-03.png" id="3_3smsa"]
-[ext_resource type="Texture2D" uid="uid://wfoflci40yw4" path="res://Sprites/Sprite-04.png" id="4_8erm5"]
-[ext_resource type="Texture2D" uid="uid://cmto6blld17bo" path="res://Sprites/Sprite-05.png" id="5_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://b5uecdh6c2ah8" path="res://Sprites/Sprite nadando2.png" id="6_3smsa"]
-[ext_resource type="Texture2D" uid="uid://cacckr4rq5xuf" path="res://Sprites/Sprite nadando3.png" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cvow3wtpgxbls" path="res://Sprites/Character/Sprite-02.png" id="2_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://dc6djdc0yolbp" path="res://Sprites/Character/Sprite-03.png" id="3_3smsa"]
+[ext_resource type="Texture2D" uid="uid://wfoflci40yw4" path="res://Sprites/Character/Sprite-04.png" id="4_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cmto6blld17bo" path="res://Sprites/Character/Sprite-05.png" id="5_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://b5uecdh6c2ah8" path="res://Sprites/Character/Sprite nadando2.png" id="6_3smsa"]
+[ext_resource type="Texture2D" uid="uid://cacckr4rq5xuf" path="res://Sprites/Character/Sprite nadando3.png" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxrlw"]
 radius = 6.0

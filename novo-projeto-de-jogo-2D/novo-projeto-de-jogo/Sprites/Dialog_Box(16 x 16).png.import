@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wfoflci40yw4"
-path="res://.godot/imported/Sprite-04.png-59554bb5f8c127ad58cbd20466135223.ctex"
+uid="uid://durt5unec13xn"
+path="res://.godot/imported/Dialog_Box(16 x 16).png-ded35be6d89766b00bce45706ec4f7eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite-04.png"
-dest_files=["res://.godot/imported/Sprite-04.png-59554bb5f8c127ad58cbd20466135223.ctex"]
+source_file="res://Sprites/Dialog_Box(16 x 16).png"
+dest_files=["res://.godot/imported/Dialog_Box(16 x 16).png-ded35be6d89766b00bce45706ec4f7eb.ctex"]
 
 [params]
 

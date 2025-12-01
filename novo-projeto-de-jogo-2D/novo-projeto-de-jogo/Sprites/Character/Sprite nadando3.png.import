@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5uecdh6c2ah8"
-path="res://.godot/imported/Sprite nadando2.png-8ac7f88145ef8b0113dfeb91c805f78e.ctex"
+uid="uid://cacckr4rq5xuf"
+path="res://.godot/imported/Sprite nadando3.png-66b4b30b8f9233af3afbc0ae9bfd5583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite nadando2.png"
-dest_files=["res://.godot/imported/Sprite nadando2.png-8ac7f88145ef8b0113dfeb91c805f78e.ctex"]
+source_file="res://Sprites/Character/Sprite nadando3.png"
+dest_files=["res://.godot/imported/Sprite nadando3.png-66b4b30b8f9233af3afbc0ae9bfd5583.ctex"]
 
 [params]
 
