@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=12 format=3 uid="uid://d22ls3khmw8tb"]
 
+[ext_resource type="Texture2D" uid="uid://cxvpsk6qlp1sx" path="res://Sprites/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_v158k"]
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://c1k2voqp7n5sf" path="res://Sprites/Bk/sky.png" id="4_3dryh"]
 [ext_resource type="Texture2D" uid="uid://dt8ohl7lbvjd0" path="res://Sprites/Bk/mountains 3.png" id="5_1l0tm"]
@@ -8,7 +9,78 @@
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dk3t1o176qtku" path="res://Scenes/enemy.tscn" id="7_v158k"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
+texture = ExtResource("1_v158k")
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0/physics_layer_0/polygon_0/one_way = true
+11:1/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/physics_layer_0/polygon_0/one_way = true
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/physics_layer_0/polygon_0/one_way = true
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0/physics_layer_0/polygon_0/one_way = true
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0/physics_layer_0/polygon_0/one_way = true
+15:3/0 = 0
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:3/0/physics_layer_0/polygon_0/one_way = true
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0/physics_layer_0/polygon_0/one_way = true
+11:3/0 = 0
+11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:3/0/physics_layer_0/polygon_0/one_way = true
+12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:3/0/physics_layer_0/polygon_0/one_way = true
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:3/0/physics_layer_0/polygon_0/one_way = true
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:3/0/physics_layer_0/polygon_0/one_way = true
+
 [sub_resource type="TileSet" id="TileSet_ldgsr"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_h4fw4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
 size = Vector2(30, 315)
@@ -17,7 +89,10 @@ size = Vector2(30, 315)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ldgsr")
+collision_animatable = true
 format = 2
+layer_0/name = "ground"
+layer_0/tile_data = PackedInt32Array(1507348, 262145, 3, 1048601, 196609, 1, 1048602, 262145, 1, 1048603, 327681, 1, 983071, 196609, 1, 983072, 262145, 1, 983073, 327681, 1, 1048613, 983041, 3, 1048617, 983041, 3)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
@@ -30,8 +105,7 @@ z_index = 1
 position = Vector2(10, 285)
 
 [node name="chãoprime" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(250, -2)
+position = Vector2(716, 4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chãoprime"]
 position = Vector2(-0.6130066, 3.0517578e-05)
@@ -118,4 +192,4 @@ texture = ExtResource("6_v158k")
 position = Vector2(125, 291)
 
 [node name="enimy2" parent="." instance=ExtResource("7_v158k")]
-position = Vector2(359, 287)
+position = Vector2(1193, 300)
