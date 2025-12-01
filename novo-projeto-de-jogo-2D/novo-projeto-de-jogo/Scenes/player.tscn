@@ -5,27 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://dc6djdc0yolbp" path="res://Sprites/Sprite-03.png" id="3_3smsa"]
 [ext_resource type="Texture2D" uid="uid://wfoflci40yw4" path="res://Sprites/Sprite-04.png" id="4_8erm5"]
 [ext_resource type="Texture2D" uid="uid://cmto6blld17bo" path="res://Sprites/Sprite-05.png" id="5_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://b5uecdh6c2ah8" path="res://Sprite nadando2.png" id="6_3smsa"]
-[ext_resource type="Texture2D" uid="uid://cacckr4rq5xuf" path="res://Sprite nadando3.png" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://b5uecdh6c2ah8" path="res://Sprites/Sprite nadando2.png" id="6_3smsa"]
+[ext_resource type="Texture2D" uid="uid://cacckr4rq5xuf" path="res://Sprites/Sprite nadando3.png" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxrlw"]
-radius = 9.0
-height = 28.0
+radius = 8.0
+height = 26.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v158k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_x3wgy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_3smsa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_8erm5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_f1ek2")
 }],
 "loop": true,
 "name": &"idle",
@@ -41,25 +32,40 @@ animations = [{
 "loop": true,
 "name": &"jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8erm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f1ek2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
 }]
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_fkybt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_qxrlw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 2)
 scale = Vector2(0.87500006, 0.87500006)
 sprite_frames = SubResource("SpriteFrames_v158k")
-animation = &"jump"
+animation = &"run"
 autoplay = "jump"
-frame_progress = 0.006949587
+frame = 1
+frame_progress = 0.19195734
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(1, 0)
 limit_left = 0
 limit_smoothed = true

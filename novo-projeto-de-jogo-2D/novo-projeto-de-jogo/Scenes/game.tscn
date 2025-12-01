@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d22ls3khmw8tb"]
+[gd_scene load_steps=8 format=3 uid="uid://d22ls3khmw8tb"]
 
 [ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://c1k2voqp7n5sf" path="res://Sprites/Bk/sky.png" id="4_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dt8ohl7lbvjd0" path="res://Sprites/Bk/mountains 3.png" id="5_1l0tm"]
 [ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://b8x7s8ffwkatn" path="res://Sprites/Bk/mountains 2.png" id="6_v158k"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
@@ -28,10 +31,47 @@ scale = Vector2(0.12963915, 0.079454266)
 texture = ExtResource("7_1l0tm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-6, 304, 66, 313, 144, 304, 209, 307, 292, 316, 344, 300, 428, 309, 564, 309, 648, 300, 759, 306, 849, 302, 917, 305, 918, 397, -6, 397)
+position = Vector2(-0.6130066, 3.0517578e-05)
+scale = Vector2(0.99783546, 0.9999999)
+polygon = PackedVector2Array(-7.4030175, 307, 68.76184, 310, 124.88332, 307, 188.01999, 307, 284.22824, 314, 341.3519, 304, 378.43216, 304, 428.54062, 309, 481.65558, 310, 573.8551, 304, 649.0178, 302, 760.2586, 307, 850.45386, 304, 918.6014, 305, 918, 397, -6, 397)
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(456.5, 166.7218)
 scale = Vector2(0.48072916, 0.42114812)
 texture = ExtResource("6_i6g32")
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="05" type="ParallaxLayer" parent="BG"]
+texture_filter = 1
+motion_mirroring = Vector2(600, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/05"]
+texture_filter = 1
+position = Vector2(317, 174.00012)
+scale = Vector2(0.09679509, 0.0967951)
+texture = ExtResource("4_3dryh")
+
+[node name="04" type="ParallaxLayer" parent="BG"]
+texture_filter = 1
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(527.66, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/04"]
+texture_filter = 1
+position = Vector2(247.35226, 321.34375)
+scale = Vector2(0.074229635, 0.07422961)
+texture = ExtResource("5_1l0tm")
+
+[node name="03" type="ParallaxLayer" parent="BG"]
+texture_filter = 1
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(594.84, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/03"]
+texture_filter = 1
+position = Vector2(272.05826, 313.99997)
+scale = Vector2(0.08374956, 0.08489796)
+texture = ExtResource("6_v158k")
