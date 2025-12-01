@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d22ls3khmw8tb"]
+
+[ext_resource type="Script" uid="uid://l3uwbh6jc1wk" path="res://Scripts/game.gd" id="1_3dryh"]
+[ext_resource type="PackedScene" uid="uid://0uy77r75f33t" path="res://Scenes/player.tscn" id="1_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://ch2bongy7txqy" path="res://Sprites/Background01.jpg" id="6_i6g32"]
+[ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
+
+[node name="Inicio" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Inicio"]
+
+[node name="player" parent="." instance=ExtResource("1_wrm1d")]
+z_index = 1
+position = Vector2(10, 285)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(455.86722, 348.5)
+scale = Vector2(0.12963915, 0.079454266)
+texture = ExtResource("7_1l0tm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-6, 304, 66, 313, 144, 304, 209, 307, 292, 316, 344, 300, 428, 309, 564, 309, 648, 300, 759, 306, 849, 302, 917, 305, 918, 397, -6, 397)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(458.57257, 166.7218)
+scale = Vector2(0.47639966, 0.42114812)
+texture = ExtResource("6_i6g32")
