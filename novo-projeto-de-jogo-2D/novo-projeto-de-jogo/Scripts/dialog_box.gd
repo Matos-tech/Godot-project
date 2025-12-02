@@ -29,17 +29,15 @@ func display_text(text_to_display:String):
 		custom_minimum_size.y = size.y
 		
 	global_position.x -= size.x/2
-	global_position.y-= size.y +24
+	global_position.y-= size.y + 24
 	text_label.text=""
-	
-	
 	display_letter()
 	
 func display_letter():
-	text_label.text+= text[letter_index]
+	text_label.text += text[letter_index]
 	letter_index +=1
 	
-	if letter_index>= text. length():
+	if letter_index>= text.length():
 		text_display_finished.emit()
 		return
 	

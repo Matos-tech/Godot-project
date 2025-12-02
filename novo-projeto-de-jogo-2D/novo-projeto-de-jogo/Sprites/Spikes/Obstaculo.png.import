@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cosb5e3srhrn6"
-path="res://.godot/imported/Obstaculo Gelo 3.png-2d79e3b21f78f273a85e147cf541f44d.ctex"
+uid="uid://bbynn4i4ex8hu"
+path="res://.godot/imported/Obstaculo.png-5704c9bd9d99e10125ecbf646dea1cfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Spikes/Obstaculo Gelo 3.png"
-dest_files=["res://.godot/imported/Obstaculo Gelo 3.png-2d79e3b21f78f273a85e147cf541f44d.ctex"]
+source_file="res://Sprites/Spikes/Obstaculo.png"
+dest_files=["res://.godot/imported/Obstaculo.png-5704c9bd9d99e10125ecbf646dea1cfc.ctex"]
 
 [params]
 

@@ -22,7 +22,7 @@ func start_message(position: Vector2,lines: Array[String]):
 func show_text():
 	dialog_box = dialog_box_scene.instantiate()
 	dialog_box.text_display_finished.connect(_on_all_text_displayed)
-	get_tree().root_and_child(dialog_box)
+	get_tree().root.add_child(dialog_box)
 	dialog_box.global_position= dialog_box_position
 	dialog_box.display_text(message_lines[current_line])
 	can_advance_message= false
@@ -30,13 +30,19 @@ func show_text():
 func _on_all_text_displayed():
 	can_advance_message = true
 
-func _unhandled_input (event):
-	if (event.is_action_pressed("advance_message")&& is_message_active && can_advance_message):
+func _unhandled_input(event):
+	if event.is_action_pressed("advance_message") \
+	and is_message_active \
+	and can_advance_message:
+		
 		dialog_box.queue_free()
-		current_line+=1
-		if current_line>= message_lines.size():
+		current_line += 1
+		
+		# Acabou o diálogo
+		if current_line >= message_lines.size():
 			is_message_active = false
-			current_line = 0 
-			current_line =0
+			current_line = 0
 			return
-			show_text()
+		
+		# Continua o diálogo
+		show_text()

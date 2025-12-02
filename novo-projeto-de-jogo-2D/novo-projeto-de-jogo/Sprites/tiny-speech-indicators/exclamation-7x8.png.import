@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b15p6r0df7sbs"
-path="res://.godot/imported/Obstaculo Gelo 1.png-0819806d8881367c236fd495ac3ea8ea.ctex"
+uid="uid://uthsyj6ygnl4"
+path="res://.godot/imported/exclamation-7x8.png-68172c10b85c98b581505ef502279b22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Spikes/Obstaculo Gelo 1.png"
-dest_files=["res://.godot/imported/Obstaculo Gelo 1.png-0819806d8881367c236fd495ac3ea8ea.ctex"]
+source_file="res://Sprites/tiny-speech-indicators/exclamation-7x8.png"
+dest_files=["res://.godot/imported/exclamation-7x8.png-68172c10b85c98b581505ef502279b22.ctex"]
 
 [params]
 

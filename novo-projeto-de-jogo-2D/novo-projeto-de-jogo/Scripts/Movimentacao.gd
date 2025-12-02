@@ -1,44 +1,46 @@
 extends CharacterBody2D
 
 const SPEED = 150.0
-const JUMP_FORCE= -350.0
-var Quanti_Dano =0
+const JUMP_FORCE = -350.0
+
 @export var player_life := 3
-var knockback_vector:= Vector2.ZERO
-@onready var animation:= $AnimatedSprite2D as AnimatedSprite2D
-@onready var remote_transform:= $Remote as RemoteTransform2D
+
+var knockback_vector := Vector2.ZERO
 var is_jumping := false
+
+@onready var animation := $AnimatedSprite2D
+@onready var remote_transform := $Remote
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		is_jumping = true
-	elif  is_on_floor():
-		is_jumping=false
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
+	if is_on_floor() and velocity.y == 0:
+		is_jumping = false
+
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction !=0:
+
+	if direction != 0:
 		velocity.x = direction * SPEED
-		animation.scale.x =-direction
-		if !is_jumping:
-			animation. play("run")
-			
-	elif is_jumping:
-		animation. play("jump")
-		
+		animation.scale.x = -direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	if is_jumping:
+		animation.play("jump")
+	elif direction != 0:
+		animation.play("run")
+	else:
 		animation.play("idle")
-		
+
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
-	move_and_slide()
 
+	move_and_slide()
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
@@ -47,18 +49,15 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 			queue_free()
 			get_tree().reload_current_scene()
 
-
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	player_life -= 1
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
-		var knockback_tween := get_tree().create_tween()
-		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		var t := get_tree().create_tween()
+		t.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 
-		
 func follow_camera(camera):
-	var camera_path=camera.get_path()
-	remote_transform.remote_path = camera_path
+	remote_transform.remote_path = camera.get_path()
 	
 #func take_damage(knockback_force :=Vector2.ZERO, duration :=0.25):
 	#player_life -=1
