@@ -39,8 +39,14 @@ func _physics_process(delta: float) -> void:
 
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
-
+	
 	move_and_slide()
+	#animacao da colisao com o boneco
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and collider.has_method("has_collided_whith"):
+			collider.has_collided_whith(collision, self)
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
