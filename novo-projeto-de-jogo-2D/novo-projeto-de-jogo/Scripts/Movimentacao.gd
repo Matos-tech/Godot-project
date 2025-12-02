@@ -45,6 +45,7 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		player_life -=1
 	print("tomou dano")
 	if (player_life ==0 ):
+		get_tree().reload_current_scene()
 		print("morreu")
 		queue_free()
 	#else:

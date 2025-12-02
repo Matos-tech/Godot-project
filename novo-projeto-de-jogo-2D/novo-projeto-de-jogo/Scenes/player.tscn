@@ -65,10 +65,8 @@ texture_filter = 1
 position = Vector2(0, 2)
 scale = Vector2(0.87500006, 0.87500006)
 sprite_frames = SubResource("SpriteFrames_v158k")
-animation = &"run"
+animation = &"jump"
 autoplay = "jump"
-frame = 1
-frame_progress = 0.19195734
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
