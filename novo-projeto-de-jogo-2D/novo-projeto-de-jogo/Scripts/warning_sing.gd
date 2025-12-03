@@ -4,15 +4,13 @@ extends Node2D
 
 #mensagem
 const lines : Array[String]= [
-	" Olá, Penpen… que saudades!",
-	" Você precisa nos encontrar.",
-	" Tivemos de fugir…",
-	" Nosso lar começou a derreter", 
-	" E as temperaturas subiram muito.",
-	" Quase não restou gelo…",
-	" E o pouco que sobrou...",
-	" Está infestado de criaturas tóxicas.",
-	" Venha logo… Ass.: Sra. Penpen",
+" Cuidado Penpen, ",
+" No decorrer do caminho ",
+" O gelo vai ficando ",
+" Cada vez mais fino e instavel ",
+" -Seja rapido e cuidadoso- ",
+
+
 ]
 
 func _unhandled_input(event):

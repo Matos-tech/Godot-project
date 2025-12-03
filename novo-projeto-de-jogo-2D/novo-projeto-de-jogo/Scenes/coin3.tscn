@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dckc1vus2mpw"]
+
+[ext_resource type="Script" uid="uid://bg6o7oykuypsf" path="res://Scripts/coin.gd" id="1_p8cyt"]
+[ext_resource type="Texture2D" uid="uid://dl2f2x60ffxu5" path="res://Sprites/resgate/D1.png" id="2_p8cyt"]
+[ext_resource type="Texture2D" uid="uid://b3rnf1d5p2wnn" path="res://Sprites/resgate/D2.png" id="3_l464t"]
+[ext_resource type="Texture2D" uid="uid://nkjki7gpmdmc" path="res://Sprites/resgate/D3.png" id="4_n5nwf"]
+[ext_resource type="Texture2D" uid="uid://d2l2ppt0qa3s4" path="res://Sprites/resgate/D4.png" id="5_i5yqn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l7mo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p8cyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l464t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n5nwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i5yqn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2p6v"]
+
+[node name="coin" type="Area2D"]
+collision_layer = 10
+script = ExtResource("1_p8cyt")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2l7mo")
+animation = &"idle"
+frame_progress = 0.2601985
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_h2p6v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

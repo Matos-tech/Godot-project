@@ -57,6 +57,7 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	player_life -= 1
+	print("Tomou dano")
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
 		var t := get_tree().create_tween()
