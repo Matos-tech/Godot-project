@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8x7s8ffwkatn" path="res://Sprites/Bk/mountains 2.png" id="6_v158k"]
 [ext_resource type="Texture2D" uid="uid://5yyqhclb6bp8" path="res://Sprites/ground.png" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dk3t1o176qtku" path="res://Scenes/enemy.tscn" id="7_v158k"]
-[ext_resource type="Script" uid="uid://b7ysd43gqam8x" path="res://Scripts/warning_sing.gd" id="11_o5yvi"]
+[ext_resource type="Script" path="res://Scripts/warning_sing.gd" id="11_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://dsxfk1bku71jp" path="res://Sprites/tiny-speech-indicators/tiny_chat_icon.png" id="12_rku1e"]
 [ext_resource type="Texture2D" uid="uid://bbynn4i4ex8hu" path="res://Sprites/Spikes/Obstaculo.png" id="14_1phco"]
 

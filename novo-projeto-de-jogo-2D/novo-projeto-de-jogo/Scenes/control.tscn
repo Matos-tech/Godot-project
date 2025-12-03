@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmon0r42d817w" path="res://Scripts/control.gd" id="1_btyrf"]
 [ext_resource type="Texture2D" uid="uid://b7kyjmhcyqvyd" path="res://Sprites/Bk/Bk_inicio.png" id="1_vh8u0"]
-[ext_resource type="Texture2D" uid="uid://ckmfswq7nipxp" path="res://Sprites/Bk/game_logo-outrojogotest.png" id="2_wpaqk"]
+[ext_resource type="Texture2D" uid="uid://cmfwevqmydmn6" path="res://Sprites/Bk/PinguimBKlOGO_resized.png" id="3_btyrf"]
 [ext_resource type="Theme" uid="uid://8owr4s04yej4" path="res://Sprites/BotõesDeful.tres" id="3_wpaqk"]
 [ext_resource type="Texture2D" uid="uid://wdh6ugkdkcve" path="res://Sprites/Character/inguim.png" id="5_btyrf"]
 
@@ -133,7 +133,7 @@ size_flags_horizontal = 6
 
 [node name="LOGO" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_wpaqk")
+texture = ExtResource("3_btyrf")
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
