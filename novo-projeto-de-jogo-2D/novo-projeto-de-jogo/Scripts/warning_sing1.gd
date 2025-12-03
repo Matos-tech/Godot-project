@@ -4,12 +4,14 @@ extends Node2D
 
 #mensagem
 const lines : Array[String]= [
-" Cuidado Penpen, ",
-" No decorrer do caminho ",
-" O gelo vai ficando ",
-" Cada vez mais fino e instavel ",
-" -Seja rapido e cuidadoso- ",
-
+" Olá, Penpen… que saudades! ",
+" Você precisa nos encontrar. ",
+" Tivemos de fugir… ",
+" Nosso lar começou a derreter ",
+" e as temperaturas subiram muito. ",
+" Quase não restou gelo ",
+"Por isso tivemos que migrar",
+"Venha logo Ass.: Sra. Penpen",
 
 ]
 
@@ -18,7 +20,7 @@ func _unhandled_input(event):
 		texture.show()
 		if event.is_action_pressed("interact") && !DialogManager.is_message_active:
 			texture.hide()
-			DialogManager.start_message(global_position, lines)
+			DialogManager.start_message(global_position,lines)
 			print("tocou")
 			
 	else:
